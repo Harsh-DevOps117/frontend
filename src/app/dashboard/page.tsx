@@ -34,6 +34,7 @@ export default function Dashboard() {
   const [sessionId, setSessionId] = useState<number | null>(null);
   const [sessionList, setSessionList] = useState<ChatSession[]>([]);
   const [loading, setLoading] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('access_token');
@@ -109,6 +110,7 @@ export default function Dashboard() {
       setSessionId(id);
       fetchMessages(id, token);
     }
+    setIsSidebarOpen(false);
   };
 
   const handleSend = async (e: React.FormEvent) => {
@@ -163,9 +165,13 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-split-container">
-      <aside className="chat-sidebar">
+      <div 
+        className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
+        onClick={() => setIsSidebarOpen(false)}
+      />
+      <aside className={`chat-sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-header">
-          <button className="btn btn-primary new-chat-btn" onClick={() => createNewSession()}>
+          <button className="btn btn-primary new-chat-btn" onClick={() => { createNewSession(); setIsSidebarOpen(false); }}>
             + New Chat
           </button>
         </div>
@@ -183,8 +189,11 @@ export default function Dashboard() {
       </aside>
 
       <div className={`chat-panel ${activeArtifact ? 'with-artifact' : ''}`}>
-        <div className="chat-header" style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px 32px', borderBottom: '1px solid var(--hairline)' }}>
-          <button className="btn btn-outline" style={{ padding: '6px 12px', fontSize: '14px' }} onClick={() => window.print()}>
+        <div className="chat-header">
+          <button className="btn btn-outline mobile-sidebar-toggle" onClick={() => setIsSidebarOpen(true)}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <button className="btn btn-outline print-btn" onClick={() => window.print()}>
             Print Chat
           </button>
         </div>
