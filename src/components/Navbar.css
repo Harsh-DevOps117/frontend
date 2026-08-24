@@ -3,12 +3,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 48px; /* Carbon top-nav height */
+  height: 48px;
   z-index: 100;
   background-color: var(--canvas);
   border-bottom: 1px solid var(--hairline);
 }
-
 .navbar-container {
   max-width: 1584px;
   margin: 0 auto;
@@ -18,26 +17,22 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .navbar-logo {
-  font-size: 16px; /* Carbon logo sizing is subtle */
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0;
   color: var(--ink);
 }
-
 .navbar-links {
   display: flex;
   gap: 8px;
   align-items: center;
 }
-
 .user-menu {
   display: flex;
   align-items: center;
   gap: 16px;
 }
-
 .user-avatar {
   width: 32px;
   height: 32px;
@@ -50,13 +45,11 @@
   font-size: 14px;
   font-weight: 600;
 }
-
 .user-name {
   font-size: 14px;
   font-weight: 600;
   color: var(--ink);
 }
-
 .logout-btn {
   padding: 8px 12px;
   font-size: 12px;

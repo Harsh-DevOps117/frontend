@@ -4,9 +4,8 @@
   padding: 64px 0 32px 0;
   margin-top: auto;
 }
-
 .footer-container {
-  max-width: 1584px; /* Carbon max grid */
+  max-width: 1584px;
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
@@ -15,55 +14,47 @@
   gap: 48px;
   margin-bottom: 64px;
 }
-
 .footer-brand {
   flex: 1 1 300px;
 }
-
 .footer-logo {
   font-size: 24px;
   font-weight: 600;
   color: var(--inverse-ink);
   letter-spacing: -0.02em;
 }
-
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   gap: 64px;
   flex: 2 1 auto;
 }
-
 .footer-column {
   display: flex;
   flex-direction: column;
   gap: 16px;
   min-width: 150px;
 }
-
 .footer-heading {
   color: var(--inverse-ink);
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
 }
-
 .footer-column a {
   color: var(--inverse-ink-muted);
   font-size: 14px;
   text-decoration: none;
 }
-
 .footer-column a:hover {
   text-decoration: underline;
   color: var(--inverse-ink);
 }
-
 .footer-bottom {
   max-width: 1584px;
   margin: 0 auto;
   padding: 32px 32px 0 32px;
-  border-top: 1px solid #393939; /* Carbon gray-80 */
+  border-top: 1px solid #393939;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,12 +62,10 @@
   gap: 24px;
   font-size: 12px;
 }
-
 .footer-legal {
   display: flex;
   gap: 24px;
 }
-
 .footer-legal a {
   color: var(--inverse-ink-muted);
 }

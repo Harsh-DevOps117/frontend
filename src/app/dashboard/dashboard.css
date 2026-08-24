@@ -1,10 +1,9 @@
 .dashboard-split-container {
   display: flex;
-  height: calc(100vh - 48px); /* subtract navbar height */
+  height: calc(100vh - 48px);
   margin-top: 48px;
   background-color: var(--surface-1);
 }
-
 .chat-sidebar {
   width: 260px;
   background-color: var(--canvas);
@@ -13,17 +12,14 @@
   flex-direction: column;
   flex-shrink: 0;
 }
-
 .sidebar-header {
   padding: 24px 16px;
   border-bottom: 1px solid var(--hairline);
 }
-
 .new-chat-btn {
   width: 100%;
   justify-content: center;
 }
-
 .session-list {
   flex: 1;
   overflow-y: auto;
@@ -32,7 +28,6 @@
   flex-direction: column;
   gap: 8px;
 }
-
 .session-item {
   padding: 12px 16px;
   border-radius: var(--radius);
@@ -42,18 +37,15 @@
   color: var(--ink);
   border: 1px solid transparent;
 }
-
 .session-item:hover {
   background-color: var(--surface-1);
   border: 1px solid var(--hairline);
 }
-
 .session-item.active {
   background-color: var(--primary);
   color: #fff;
   border: 1px solid var(--primary);
 }
-
 .chat-panel {
   flex: 1;
   display: flex;
@@ -63,13 +55,11 @@
   margin: 0 auto;
   width: 100%;
 }
-
 .chat-panel.with-artifact {
   max-width: 600px;
   margin: 0;
   border-right: 1px solid var(--hairline);
 }
-
 .messages-container {
   flex: 1;
   overflow-y: auto;
@@ -78,20 +68,16 @@
   flex-direction: column;
   gap: 24px;
 }
-
 .message-wrapper {
   display: flex;
   width: 100%;
 }
-
 .message-wrapper.user {
   justify-content: flex-end;
 }
-
 .message-wrapper.assistant {
   justify-content: flex-start;
 }
-
 .message-bubble {
   max-width: 80%;
   padding: 16px;
@@ -99,24 +85,20 @@
   font-size: 16px;
   line-height: 1.5;
 }
-
 .message-wrapper.user .message-bubble {
   background-color: var(--primary);
   color: #fff;
 }
-
 .message-wrapper.assistant .message-bubble {
   background-color: var(--canvas);
   color: var(--ink);
   border: 1px solid var(--hairline);
 }
-
 .chat-input-wrapper {
   padding: 24px 32px;
   background-color: var(--surface-1);
   border-top: 1px solid var(--hairline);
 }
-
 .chat-input-container {
   display: flex;
   gap: 16px;
@@ -124,7 +106,6 @@
   border: 1px solid var(--hairline);
   padding: 8px;
 }
-
 .chat-input {
   flex: 1;
   border: none;
@@ -134,21 +115,17 @@
   color: var(--ink);
   font-family: inherit;
 }
-
 .chat-input:focus {
   outline: none;
 }
-
 .chat-submit {
   padding: 8px 24px;
 }
-
 .artifact-panel {
   flex: 1;
   background-color: var(--canvas);
   min-width: 400px;
 }
-
 @media print {
   body {
     background-color: white !important;

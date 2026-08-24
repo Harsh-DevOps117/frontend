@@ -185,7 +185,7 @@ export default function Dashboard() {
       <div className={`chat-panel ${activeArtifact ? 'with-artifact' : ''}`}>
         <div className="chat-header" style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px 32px', borderBottom: '1px solid var(--hairline)' }}>
           <button className="btn btn-outline" style={{ padding: '6px 12px', fontSize: '14px' }} onClick={() => window.print()}>
-            🖨️ Print Chat
+            Print Chat
           </button>
         </div>
         <div className="messages-container">

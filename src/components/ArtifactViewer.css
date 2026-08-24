@@ -5,7 +5,6 @@
   background-color: var(--canvas);
   border: 1px solid var(--hairline);
 }
-
 .artifact-header {
   display: flex;
   justify-content: space-between;
@@ -14,30 +13,25 @@
   border-bottom: 1px solid var(--hairline);
   background-color: var(--surface-1);
 }
-
 .artifact-header h3 {
   color: var(--ink);
   margin: 0;
 }
-
 .close-btn {
   padding: 4px 8px;
   font-size: 12px;
 }
-
 .artifact-content {
   flex: 1;
   overflow: auto;
   padding: 16px;
 }
-
 .artifact-iframe {
   width: 100%;
   height: 100%;
   border: none;
   background-color: #fff;
 }
-
 .markdown-preview {
   font-family: monospace;
   white-space: pre-wrap;
