@@ -211,7 +211,7 @@ export default function Dashboard() {
             <div key={i} className={`message-wrapper ${m.role}`}>
               <div className="message-bubble">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                  {m.content.replace(/<artifact>[\s\S]*?<\/artifact>/g, '').trim() || (m.artifacts ? 'I have generated the requested document for you. View it on the side.' : '')}
+                  {m.content.replace(/<\/?artifact>/g, '').trim()}
                 </ReactMarkdown>
                 {m.sources && m.sources.length > 0 && (
                   <div className="sources-container">
