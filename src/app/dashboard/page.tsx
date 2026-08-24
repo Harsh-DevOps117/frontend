@@ -7,12 +7,20 @@ import remarkGfm from 'remark-gfm';
 import './dashboard.css';
 import ArtifactViewer from '../../components/ArtifactViewer';
 
+interface SourceMetadata {
+  episode_id: string;
+  title: string | null;
+  guest: string | null;
+  youtube_url: string | null;
+  timestamps: string[];
+}
+
 interface Message {
   id?: number;
   role: 'user' | 'assistant';
   content: string;
   artifacts?: string | null;
-  sources?: string[] | null;
+  sources?: SourceMetadata[] | null;
 }
 
 interface Artifact {
@@ -205,13 +213,33 @@ export default function Dashboard() {
                   {m.content}
                 </ReactMarkdown>
                 {m.sources && m.sources.length > 0 && (
-                  <div className="sources-container mt-2 text-xs opacity-75">
-                    <strong>Sources:</strong>
-                    <div className="flex gap-2 flex-wrap mt-1">
+                  <div className="sources-container mt-4 pt-3 border-t border-gray-200">
+                    <strong className="text-sm">Sources:</strong>
+                    <div className="flex flex-col gap-2 mt-2">
                       {m.sources.map((s, idx) => (
-                        <span key={idx} className="source-badge px-2 py-1 bg-gray-200 text-gray-800 rounded">
-                          {s}
-                        </span>
+                        <div key={idx} className="source-card p-3 bg-gray-50 border border-gray-200 rounded-md text-sm">
+                          {s.title ? <div className="font-medium text-gray-900 mb-1">{s.title}</div> : <div className="font-medium text-gray-900 mb-1">{s.episode_id}</div>}
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-gray-600 text-xs">
+                            {s.guest && <span>👤 {s.guest}</span>}
+                            {s.youtube_url && (
+                              <a href={s.youtube_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline flex items-center gap-1">
+                                📺 Watch on YouTube
+                              </a>
+                            )}
+                          </div>
+                          {s.timestamps && s.timestamps.length > 0 && (
+                            <div className="mt-2 flex flex-wrap gap-1">
+                              {s.timestamps.map((ts, tIdx) => {
+                                const seconds = ts.split(':').reduce((acc, time) => (60 * acc) + parseInt(time), 0);
+                                return (
+                                  <a key={tIdx} href={s.youtube_url ? `${s.youtube_url}&t=${seconds}s` : '#'} target="_blank" rel="noopener noreferrer" className="px-2 py-0.5 bg-gray-200 text-gray-700 hover:bg-gray-300 text-xs rounded transition-colors">
+                                    ⏱ {ts}
+                                  </a>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </div>
                   </div>
