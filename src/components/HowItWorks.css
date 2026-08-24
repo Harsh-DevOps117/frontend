@@ -1,0 +1,59 @@
+.how-it-works {
+  background-color: var(--surface-1); /* Alternate row color */
+  padding: var(--spacing-section) 32px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.hiw-container {
+  max-width: 1584px;
+  margin: 0 auto;
+}
+
+.hiw-header {
+  margin-bottom: var(--spacing-xxl);
+  max-width: 800px;
+}
+
+.hiw-header h2 {
+  color: var(--ink);
+  margin-bottom: var(--spacing-md);
+}
+
+.hiw-subtitle {
+  color: var(--ink-muted);
+}
+
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.hiw-step {
+  background-color: var(--canvas);
+  border: 1px solid var(--hairline);
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hiw-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 8px;
+  width: fit-content;
+}
+
+.hiw-step h3 {
+  color: var(--ink);
+  margin-bottom: var(--spacing-md);
+}
+
+.hiw-step p {
+  color: var(--ink-muted);
+}

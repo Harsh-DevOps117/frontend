@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap');
+
+:root {
+  /* Carbon Color Tokens */
+  --canvas: #ffffff; /* Default page background */
+  --surface-1: #f4f4f4; /* Light gray for elevation/inputs */
+  --surface-2: #e0e0e0; /* Disabled fields, separator fill */
+  --hairline: #e0e0e0; /* 1px borders on cards, inputs */
+  --hairline-strong: #161616; /* 1px charcoal underline on focused inputs */
+  
+  --ink: #161616; /* All headlines and emphasized body */
+  --ink-muted: #525252; /* Secondary type */
+  --ink-subtle: #8c8c8c; /* Tertiary type */
+  
+  --primary: #0f62fe; /* IBM Blue - Links, primary CTAs */
+  --blue-hover: #0353e9; /* Hover state for primary buttons */
+  --blue-80: #002d9c; /* Pressed primary button */
+  
+  --inverse-canvas: #161616; /* Footer surface */
+  --inverse-ink: #ffffff; /* Footer headings */
+  --inverse-ink-muted: #c6c6c6; /* Footer body */
+  
+  /* Semantic Colors */
+  --semantic-error: #da1e28;
+  
+  /* Geometry */
+  --radius: 0px; /* STRICTLY 0px */
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 96px;
+  
+  --font-sans: 'IBM Plex Sans', Helvetica Neue, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0.16px; /* Carbon precision detail */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Typography Hierarchy */
+.display-xl {
+  font-size: clamp(48px, 6vw, 96px);
+  font-weight: 300;
+  line-height: 1.17;
+  letter-spacing: -0.5px;
+}
+
+.display-lg {
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1.17;
+  letter-spacing: -0.4px;
+}
+
+.display-md {
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 300;
+  line-height: 1.20;
+  letter-spacing: 0px;
+}
+
+.headline {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.body-lg {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0px;
+}
+
+.body {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.50;
+  letter-spacing: 0.16px;
+}
+
+.body-sm {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
+}
+
+.caption {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.32px;
+  color: var(--ink-muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none !important; /* Never underline buttons */
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-hover);
+}
+
+.btn-primary:active {
+  background-color: var(--blue-80);
+}
+
+.btn-secondary {
+  background-color: var(--ink);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #4d4d4d;
+}
+
+.btn-tertiary {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-tertiary:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary);
+}
+
+.btn-ghost:hover {
+  background-color: var(--surface-2);
+}
+
+/* Carbon Focus Treatment */
+.btn:focus, a:focus, input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Cards */
+.feature-card {
+  background-color: var(--canvas);
+  border: 1px solid var(--hairline);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+}
+
+.feature-card-elevated {
+  background-color: var(--surface-1);
+  border: 1px solid var(--hairline);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+}
+
+/* Form Inputs */
+.input-group {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.input-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: var(--surface-1);
+  border: none;
+  border-bottom: 1px solid var(--hairline-strong);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 18px;
+  transition: all 0.1s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-bottom: 2px solid var(--primary);
+}

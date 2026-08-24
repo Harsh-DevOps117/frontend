@@ -1,0 +1,48 @@
+.auth-container {
+  min-height: calc(100vh - 48px); /* Top nav height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background-color: var(--surface-1); /* Use surface-1 for background to make white card pop */
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 48px;
+}
+
+.auth-header {
+  margin-bottom: 32px;
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.auth-footer {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.auth-footer a {
+  margin-left: 4px;
+}
+
+@media (max-width: 672px) {
+  .auth-container {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 48px;
+  }
+
+  .auth-card {
+    padding: 24px;
+  }
+}
